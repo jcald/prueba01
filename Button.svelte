@@ -1,0 +1,32 @@
+<script context="module">
+  export async function load() {
+    return {
+      props: {
+        buttonName: "Click Me"
+      }
+    };
+  }
+</script>
+<script>
+  export let buttonName;
+
+	let count = 0;
+
+	function handleClick() {
+	  count += 1;
+	}
+</script>
+
+<style>
+	button {
+	  background: #ff3e00;
+	  color: white;
+	  border: none;
+	  padding: 8px 12px;
+	  border-radius: 2px;
+	}
+</style>
+
+<button on:click={handleClick}>
+  {buttonName} - Clicked {count} {count === 1 ? 'time' : 'times'}
+</button>
